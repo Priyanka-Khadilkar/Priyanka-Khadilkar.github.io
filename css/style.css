@@ -1,0 +1,492 @@
+﻿/*************************************************************
+ * TABLE OF CONTENTS
+ *************************************************************
+ * 1. BASIC/DEFAULT STYLES
+ * 2. LAYOUT STYLES
+ * 3. MENUS
+ * 4. SOCIAL LINKS
+ * 5. PORTFOLIO PHOTO
+ * 6. FOOTER
+ * 7. ABOUT ME SECTION
+ * 8. PROJECT
+ * 9. MEDIA QUERIES
+ */
+
+/* 1. BASIC/DEFAULT STYLES */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font: normal 16px/1.2 Georgia, 'Times New Roman', Times, serif;
+}
+
+#header {
+    background-color: #2c3e50;
+}
+
+#mobile-menu {
+    position: absolute;
+    left: -1000px;
+}
+
+/*2. LAYOUT STYLES*/
+.page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#logo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#slogan {
+    font-family: 'Ink Free';
+    font-size: 0.8750em;
+    color: #FFF;
+    margin-left: 8px;
+}
+
+.padding-top {
+    padding-top: 10px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden {
+    position: absolute;
+    left: -100000px;
+    width: 1px;
+    height: 1px;
+}
+
+.sub-header {
+    text-align: center;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 1.875em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #2c3e50;
+}
+
+.star-line-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlights {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    margin-top: 18px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/*3. MENUS*/
+#main-navigation {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+    #main-navigation ul {
+        list-style: none;
+    }
+
+    #main-navigation li {
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.125em;
+        margin-right: 25px;
+    }
+
+        #main-navigation li:last-child {
+            margin-right: 0;
+        }
+
+    #main-navigation a {
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 5px 14px 10px;
+    }
+
+        #main-navigation a:hover {
+            background-color: #233140;
+        }
+
+.menu {
+    margin: 0;
+    padding-top: 1em;
+}
+
+/*4. SOCIAL LINKS*/
+#profile-links {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+}
+
+    #profile-links ul {
+        list-style: none;
+    }
+
+    #profile-links li {
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+        #profile-links li:last-child {
+            margin-right: 0;
+        }
+
+.profile-links-list {
+    margin: 0;
+    padding-bottom: 0px;
+}
+
+/*5. PORTFOLIO PHOTO*/
+#portfolio-photo {
+    background-color: #18bc9c;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.profile-pic, .portfolio-name {
+    flex: 1 0 0;
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+
+.portfolio-name {
+    padding-left: 50px;
+    padding-top: 100px;
+}
+
+.profile-pic {
+    text-align: right;
+}
+
+.portfolio-name div:first-child {
+    color: white;
+    font-size: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+.portfolio-name div:last-child {
+    color: white;
+    font-size: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 30px;
+}
+
+/*6.Footer*/
+#footer {
+    color: white;
+    background-color: #2c3e50;
+    text-align: center;
+    font-size: 0.875em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+/*7.ABOUT ME SECTION*/
+.aboutme-left, .aboutme-right, .project-left, .project-right {
+    flex: 1 0 0;
+}
+
+.aboutme-left {
+    margin-right: 15px;
+    font-size: 1.125em;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: #2c3e50;
+}
+
+.aboutme-right {
+    margin-left: 20px;
+    font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #2c3e50;
+}
+
+.text-indent {
+    text-indent: 10px;
+}
+
+/*8. PROJECT*/
+.project-left, .project-right {
+    background-color: #18bc9c;
+    margin-top: 8px;
+    color: white;
+    font-size: 1.125em;
+    font-family: Cambria;
+}
+
+.project-description {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.project-left {
+    margin-right: 15px;
+}
+
+.project-right {
+    margin-left: 20px;
+}
+
+#projects h3 {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: Arial;
+    font-size: 1.125em;
+}
+
+/*Form contact us*/
+#contact-me {
+    margin-bottom: 31px;
+}
+
+.form {
+    margin-top: 10px;
+    background-color: #f7f7f7;
+}
+
+.col-left {
+    float: left;
+    width: 10%;
+    margin-top: 6px;
+}
+
+.col-right {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.form-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+label {
+    padding: 12px 12px 12px 20px;
+    display: inline-block;
+    font-family: Gadugi,'Times New Roman', Times, serif;
+    font-size: 1.125em;
+}
+
+textarea {
+    height: 50px;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    resize: vertical;
+}
+
+.btn-spacing {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    padding-top: 15px;
+}
+
+input[type=submit] {
+    background-color: #128f76;
+    color: white;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: left;
+    font-family: Calibri,'Times New Roman', Times, serif;
+    font-size: 1.125em;
+}
+
+    input[type=submit]:hover {
+        background-color: #419282;
+    }
+
+/*9.  MEDIA QUERIES */
+/*Tablet styles */
+@media screen and (max-width: 768px) {
+    #contact-me {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #logo, .aboutme-left {
+        padding-left: 20px;
+    }
+
+    .aboutme-right {
+        padding-right: 20px;
+    }
+
+    #main-navigation, #profile-links {
+        padding-right: 20px;
+    }
+
+    #projects .flex-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #projects h3 {
+        font-size: 1em;
+    }
+
+    .col-left {
+        width: 15%;
+    }
+
+    .col-right {
+        width: 36%;
+    }
+}
+
+@media screen and (max-width: 682px) {
+    #logo {
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    #main-navigation, #profile-links {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+    }
+
+    #mobile-menu {
+        left: 0;
+        position: static;
+    }
+
+    .aboutme-left, .aboutme-right, .project-left, .project-right, .profile-pic, .portfolio-name {
+        flex: 1 0 100%;
+    }
+
+    .col-left, .col-right {
+        width: 75%;
+        margin-top: 0;
+    }
+
+    .aboutme-right, .aboutme-left {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .profile-pic {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .portfolio-name {
+        text-align: center;
+        padding-top: 0;
+        padding-left: 0;
+    }
+
+    #projects .flex-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .project-right {
+        margin-left: 0;
+		margin-top : 10px;
+    }
+
+    label {
+        padding: 0px 0 5px 5px;
+    }
+
+    .col-right {
+        padding-left: 5px;
+        padding-bottom: 17px;
+    }
+
+    input[type=text], textarea {
+        padding-left: 0;
+    }
+
+    .btn-spacing {
+        padding-left: 5px;
+        padding-top: 0;
+    }
+
+    .mobile-navigation-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .mobile-navigation {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #2c3e50;
+        overflow-x: hidden;
+        transition: 0.6s;
+        padding-top: 50px;
+    }
+
+        .mobile-navigation a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.2s;
+        }
+
+            .mobile-navigation a:hover {
+                color: #f1f1f1;
+            }
+
+        .mobile-navigation .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+    input[type=submit] {
+        width: 80px;
+    }
+}
