@@ -10,7 +10,10 @@
  * 7. ABOUT ME SECTION
  * 8. PROJECT
  * 9. MEDIA QUERIES
+ * 10. GAME STYLE
  */
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
 
 /* 1. BASIC/DEFAULT STYLES */
 html {
@@ -30,10 +33,27 @@ body {
     background-color: #2c3e50;
 }
 
+*:focus {
+    outline: #18bc9c dashed 2px;
+}
+
 #mobile-menu {
+    display: none;
     position: absolute;
     left: -1000px;
 }
+
+.skip-main {
+    position: absolute;
+    left: -10000px;
+}
+
+    .skip-main:focus {
+        position: relative;
+        left: 0;
+        color: white;
+    }
+
 
 /*2. LAYOUT STYLES*/
 .page-wrapper {
@@ -123,10 +143,13 @@ img {
         color: #fff;
         text-decoration: none;
         padding: 14px 5px 14px 10px;
+        transition: all .51s;
     }
 
         #main-navigation a:hover {
-            background-color: #233140;
+            border-radius: 1em;
+            background-color: #18bc9c;
+            color: #1A1A1A;
         }
 
 .menu {
@@ -159,6 +182,14 @@ img {
     padding-bottom: 0px;
 }
 
+.zoom-icon {
+    transition: transform .2s;
+}
+
+    .zoom-icon:hover {
+        transform: scale(1.2);
+    }
+
 /*5. PORTFOLIO PHOTO*/
 #portfolio-photo {
     background-color: #18bc9c;
@@ -178,6 +209,7 @@ img {
 .portfolio-name {
     padding-left: 50px;
     padding-top: 100px;
+    color: white;
 }
 
 .profile-pic {
@@ -185,10 +217,15 @@ img {
 }
 
 .portfolio-name div:first-child {
-    color: white;
+    color: #121212;
     font-size: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
+}
+
+.portfolio-name h1 {
+    margin: 0;
+    padding-left: 17px;
 }
 
 .portfolio-name div:last-child {
@@ -197,6 +234,15 @@ img {
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-left: 30px;
 }
+
+.profile-pic-animation {
+    transition: transform .8s ease-in-out;
+    cursor: pointer;
+}
+
+    .profile-pic-animation:hover {
+        transform: rotate(360deg);
+    }
 
 /*6.Footer*/
 #footer {
@@ -235,10 +281,12 @@ img {
 /*8. PROJECT*/
 .project-left, .project-right {
     background-color: #18bc9c;
-    margin-top: 8px;
+    margin: 8px;
     color: white;
     font-size: 1.125em;
     font-family: Cambria;
+    border-radius: 1em;
+    transition: transform 1s;
 }
 
 .project-description {
@@ -254,6 +302,10 @@ img {
     margin-left: 20px;
 }
 
+    .project-left:hover, .project-right:hover {
+        transform: scale(1.1);
+    }
+
 #projects h3 {
     background-color: #2c3e50;
     color: white;
@@ -263,6 +315,8 @@ img {
     padding-bottom: 15px;
     font-family: Arial;
     font-size: 1.125em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
 }
 
 /*Form contact us*/
@@ -300,6 +354,13 @@ label {
     font-size: 1.125em;
 }
 
+span {
+    padding: 12px 12px 12px 20px;
+    display: inline-block;
+    font-family: Gadugi,'Times New Roman', Times, serif;
+    font-size: 1.125em;
+}
+
 textarea {
     height: 50px;
 }
@@ -310,7 +371,14 @@ input[type=text], textarea {
     border: 1px solid #ccc;
     border-radius: 7px;
     resize: vertical;
+    outline: 0;
 }
+
+    input[type=text]:focus, textarea:focus {
+        outline: 0;
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border: 1px solid rgba(81, 203, 238, 1);
+    }
 
 .btn-spacing {
     padding-left: 20px;
@@ -328,11 +396,287 @@ input[type=submit] {
     float: left;
     font-family: Calibri,'Times New Roman', Times, serif;
     font-size: 1.125em;
+    outline: 0;
 }
+
+    input[type=submit]:focus, input[type=button]:focus {
+        outline: 0;
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+        border: 1px solid rgba(81, 203, 238, 1);
+    }
 
     input[type=submit]:hover {
         background-color: #419282;
     }
+
+    input[type=submit]:active {
+        transform: translateY(2px);
+    }
+
+/* 10. GAME STYLES */
+.animated-background {
+    animation-name: changecolor;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+
+#game-header {
+    background-color: #2c3e50;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+    #game-header h1 {
+        margin: 0;
+        color: white;
+        text-align: center;
+        font-family: 'Amatic SC', cursive;
+    }
+
+#game-main {
+    width: 60%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+}
+
+
+#multi-background {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 80vh;
+    background-color: #555;
+    background-image: url(../images/ground.png), url(../images/clouds_tree.png), url(../images/buildings.png), url(../images/sun.png), url(../images/sky.png);
+    background-size: auto 100%;
+    animation: multi-background linear 100s infinite;
+    animation-play-state: paused;
+    border-radius: 15px;
+    border-color: white;
+}
+
+#runner {
+    position: absolute;
+    bottom: 81px;
+    background: url(../images/spritestrip.png);
+    width: 235px;
+    height: 240px;
+    animation: walk-character 1s steps(6) infinite;
+    animation-play-state: paused;
+}
+
+.diamond1 {
+    position: absolute;
+    background: url(../images/diamond.png) no-repeat 0 0%;
+    animation: moving-diamond 5s linear infinite;
+    width: 70px;
+    height: 69px;
+    top: 220px;
+    animation-play-state: paused;
+}
+
+.playbutton {
+    padding: 15px 25px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    background: #d53369; /* Old browsers */
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    flex: 1 0 0;
+}
+
+    .playbutton:focus {
+        background-color: black;
+    }
+
+    .playbutton:hover {
+        background-color: #3e8e41;
+    }
+
+    .playbutton:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+
+.diamond1-fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+.game-start {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.marginleft {
+    margin-left: 1em;
+}
+
+.score {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    position: absolute;
+    border-radius: 5px;
+    border-color: black;
+    margin: 15px;
+    right: 1px;
+    padding: 15px;
+    color: white;
+    flex: 1 0 0;
+}
+
+#game-footer {
+    color: white;
+    background-color: #2c3e50;
+    text-align: center;
+    font-size: 0.875em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.modal {
+    position: absolute;
+    z-index: 1;
+    padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 50%;
+}
+
+.audio {
+    position: absolute;
+    left: 5px;
+    margin-top: 15px;
+    flex: 1 0 0;
+}
+
+.left {
+    left: 0;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+.bounce-runner {
+    animation: bounce 1s alternate 1 !important;
+}
+
+@keyframes multi-background {
+    from {
+        background-position: 7800px 0px, 6500px 0px, 5200px 0px, 3900px 0px, 2600px 0px;
+    }
+
+    to {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+}
+
+@keyframes walk-character {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: 1536px;
+    }
+}
+
+@keyframes moving-forward {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(850px);
+    }
+}
+
+@keyframes moving-diamond {
+    0% {
+        transform: translateX(850px);
+    }
+
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes changecolor {
+    0% {
+        background: #16a085;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background: #1abc9c;
+        left: 0px;
+        top: 0px;
+    }
+
+    50% {
+        background: #9b59b6;
+        left: 0px;
+        top: 0px;
+    }
+
+    75% {
+        background: #8e44ad;
+        left: 0px;
+        top: 0px;
+    }
+
+    100% {
+        background: #16a085;
+        left: 0px;
+        top: 0px;
+    }
+}
+
 
 /*9.  MEDIA QUERIES */
 /*Tablet styles */
@@ -370,6 +714,33 @@ input[type=submit] {
     .col-right {
         width: 36%;
     }
+
+    .score {
+        width: 27%;
+        padding: 5px;
+    }
+
+    #game-main {
+        width: 100%;
+    }
+
+    #multi-background {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 60vh;
+    }
+
+    .playbutton {
+        flex: 1 0 100%;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .game-start {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 @media screen and (max-width: 682px) {
@@ -387,6 +758,7 @@ input[type=submit] {
     }
 
     #mobile-menu {
+        display: block;
         left: 0;
         position: static;
     }
@@ -425,7 +797,7 @@ input[type=submit] {
 
     .project-right {
         margin-left: 0;
-		margin-top : 10px;
+        margin-top: 10px;
     }
 
     label {
@@ -469,7 +841,7 @@ input[type=submit] {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: #818181;
+            color: #D4D4D4;
             display: block;
             transition: 0.2s;
         }
@@ -488,5 +860,27 @@ input[type=submit] {
 
     input[type=submit] {
         width: 80px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .score {
+        width: 29%;
+        padding: 4px;
+        left: 0;
+        top: 63px;
+        margin-left: 5px;
+    }
+
+    #multi-background {
+        height: 78vh;
+    }
+
+    .diamond1 {
+        top: 137px;
+    }
+
+    #game-footer {
+        margin-top: 41%;
     }
 }
